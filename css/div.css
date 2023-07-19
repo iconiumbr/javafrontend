@@ -1,0 +1,16 @@
+body {
+  font-family: "Poppings", sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  color: black;
+}
+
+h2 {
+  color: darkblue;
+}
+
+div {
+  border: 1px solid black;  
+}

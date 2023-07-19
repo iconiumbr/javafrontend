@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- link para ícone na aba do browser -->
+    <link
+      rel="shortcut icon"
+      href="./images/motherboard.svg"
+      type="image/x-icon"
+    />
+
+    <title>MyAssist</title>
+
+    <!-- chamada icones do Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <!-- chamada da CSS do Bootstrap 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />-->
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+
+    <!-- chamada do meu arquivo CSS -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <!-- menu da página -->
+    <nav class="navbar navbar-expand-lg my-4">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><i class="bi bi-motherboard me-2 icon-logo"></i>MyAssist</a
+        >
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bi bi-filter-right"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Conheça</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#servicos">Serviços</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categorias
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalEletronicos"
+                    >Eletrônicos</a
+                  >
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Casa</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Ar-condicionado</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="" class="nav-link">Login</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="" class="nav-link">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- chamada do JS do Bootstrap-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <main class="container">
+      <section
+        class="row border rounded-6 d-flex justify-content-center align-items-center"
+      >
+        <div class="col-sm-6 text-center my-3">
+          <h2 class="display-6">A melhor assistência técnica de São Paulo</h2>
+          <p class="lead">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            quasi quaerat saepe!
+          </p>
+          <a href="" class="btn btn-primary">Mais informações</a>
+        </div>
+
+        <div class="col-sm-6">
+          <img
+            src="./images/Assist.png"
+            alt="Ilustração de assitencia tecnica"
+            class="img-fluid"
+          />
+        </div>
+      </section>
+
+      <h2 class="mt-5" id="servicos">Serviços</h2>
+
+      <!-- Cards no grid  -->
+      <article class="row">
+        <!-- 1o. card -->
+        <section class="col-md-6 col-lg-3 my-2">
+          <div class="card">
+            <img
+              src="./images/notebook.jpg"
+              class="card-img-top"
+              alt="Imagem de um notebook"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Notebooks</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam debitis dolore molestiae.
+              </p>
+              <a href="#" class="btn btn-primary">Conheça o serviço</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2o. card -->
+        <section class="col-md-6 col-lg-3 my-2">
+          <div class="card">
+            <img
+              src="./images/tablets.jpg"
+              class="card-img-top"
+              alt="Imagem de um tablet"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Tablets</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam debitis dolore molestiae.
+              </p>
+              <a href="#" class="btn btn-primary">Conheça o serviço</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3o. card -->
+        <section class="col-md-6 col-lg-3 my-2">
+          <div class="card">
+            <img
+              src="./images/videogame.jpg"
+              class="card-img-top"
+              alt="Imagem de um video game"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Video Games</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam debitis dolore molestiae.
+              </p>
+              <a href="#" class="btn btn-primary">Conheça o serviço</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4o. card -->
+        <section class="col-md-6 col-lg-3 my-2">
+          <div class="card">
+            <img
+              src="./images/celulares.jpg"
+              class="card-img-top"
+              alt="Imagem de um celular"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Celulares</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam debitis dolore molestiae.
+              </p>
+              <a href="#" class="btn btn-primary">Conheça o serviço</a>
+            </div>
+          </div>
+        </section>
+      </article>
+      <!-- fim cards -->
+
+      <!-- Modal eletronicos -->
+      <div
+        class="modal fade"
+        id="modalEletronicos"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5 display-6" id="exampleModalLabel">
+                Eletrônicos
+              </h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p class="mg-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+                facilis harum dolorum, eveniet officiis blanditiis temporibus
+                hic tempore culpa voluptas sequi nemo veritatis alias ullam
+                quae! Corrupti ut labore aliquid veritatis eaque, laborum amet!
+                Architecto sequi nulla officia sint officiis ad quaerat dicta
+                sunt hic dolorum atque, iure quam. Odio.
+              </p>
+              <img src="./images/DSC_0066-Enhanced-NR.jpg" alt="Placa Mãe" class="img-fluid">
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

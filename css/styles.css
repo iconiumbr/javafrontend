@@ -6,3 +6,20 @@ body {
     font-size: 30px;
     color: rgb(4, 4, 66);
 }
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+.image-login {
+    width: 160px;
+}
+
+.link-light {
+    color: #fff !important;
+}
+
+.official-photo {
+    width:50px;
+}

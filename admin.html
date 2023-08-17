@@ -23,9 +23,10 @@
     <!-- Meu CSS -->
     <link rel="stylesheet" href="./css/styles.css">
 
+    <script type="text/javascript" src="js/ordem-servico.js"></script>
 </head>
 
-<body>
+<body onload="load()">
 
     <header class="p-5 text-light bg-primary mb-5 d-flex justify-content-between">
         <div>
@@ -48,7 +49,7 @@
     <main class="container my-4" id="main1">
 
         <section class="border border-1 rounded-1 my-5 p-4">
-            <h2>Cadastrar Equipamento</h2>
+            <h2>Registrar Ordem de Serviço</h2>
             <form class="dados" id="dados" method="post" action="">
 
                 <div class="row mb-3">
@@ -57,22 +58,18 @@
                         <input type="text" class="form-control" id="proprietario" name="proprietario"
                             placeholder="Ex: Jimmy Page" required>
                     </div>
-
-                    <div class="col-md-4 my-3">
-                        <label for="tipo" class="form-label">Tipo de Equipamento</label>
-                        <select name="tipo" id="tipo" class="form-select">
-                            <option value="0">Selecione o equipamento</option>
-                            <option value="1">Equipamento A</option>
-                            <option value="2">Equipamento B</option>
-                            <option value="3">Equipamento C</option>
-                            <option value="4">Equipamento D</option>
-                            <option value="5">Equipamento E</option>
-                        </select>
+					
+					<div class="col-md-4 my-3">
+                        <label for="modelo" class="form-label">Modelo do Equipamento</label>
+                        <input type="text" class="form-control" id="modelo" name="modelo"
+                            placeholder="Ex: Inspiron Intel Core i5" required>
                     </div>
-
+					
                     <div class="col-md-4 my-3">
-                        <label for="dataEntrada" class="form-label">Entrada Lab</label>
-                        <input type="date" class="form-control" id="dataEntrada" name="dataEntrada" required>
+                        <label for="tipo" class="form-label">Tipo do Equipamento</label>
+                        <select name="tipo" id="tipo" class="form-select">
+                            
+                        </select>
                     </div>
 
                     <div class="col-md-12 my-3">
@@ -80,21 +77,15 @@
                         <textarea class="form-control" id="defeito" name="defeito"
                             placeholder="Ex: O defeito apresentado..." required></textarea>
                     </div>
-
-                    <div class="col-md-6 my-3">
-                        <label for="dataEntrada" class="form-label">Previsão Entrega</label>
-                        <input type="date" class="form-control" id="dataSaida" name="dataSaida" required>
+					
+					<div class="col-md-4 my-3">
+                        <label for="dataEntrada" class="form-label">Entrada Lab</label>
+                        <input type="date" class="form-control" id="dataEntrada" name="dataEntrada" required>
                     </div>
 
-                    <div class="col-md-6 my-3">
-                        <label for="status" class="form-label">Status do conserto</label>
-                        <select name="status" id="status" class="form-select">
-                            <option value="0">Selecione o status</option>
-                            <option value="0">Aguardando aprovação</option>
-                            <option value="0">Aguardando orçamento</option>
-                            <option value="0">Em concerto</option>
-                            <option value="0">Finalizado</option>
-                        </select>
+                    <div class="col-md-4 my-3">
+                        <label for="dataSaida" class="form-label">Previsão Entrega</label>
+                        <input type="date" class="form-control" id="dataSaida" name="dataSaida" required>
                     </div>
 
                     <div class="col-md-12 my-3">
@@ -105,7 +96,7 @@
 
                 </div>
                 <div class="d-flex justify-content-end mt-4">
-                    <button type="submit" class="btn btn-primary">Cadastrar Equipamento >></button>
+                    <button type="button" class="btn btn-primary">Cadastrar >></button>
                 </div>
             </form>
         </section>
@@ -113,12 +104,12 @@
 
         <!-- buscar no banco -->
         <section class="border border-1 rounded-1 my-5 p-4">
-            <h2 class="mb-4">Realizar Busca</h2>
+            <h2 class="mb-4">Buscar Ordem de Serviço</h2>
             <form action="" class="mb-5">
                 <div class=" d-flex my-2">
                     <input type="search" name="" id="" class="form-control py-3 me-1"
                         placeholder="Digite o código da ordem de serviço">
-                    <input type="submit" class="btn btn-primary btn-lg" value="Pesquisar">
+                    <input type="button" class="btn btn-primary btn-lg" value="Pesquisar">
                 </div>
             </form>
 
@@ -128,49 +119,74 @@
                 <!-- cabeçalho da tabela - 1a. linha - informativa -->
                 <thead class="table-primary">
                     <tr>
-                        <th>Proprietário</th>
-                        <th>Entrada no Lab</th>
+                        <th>Código</th>
+						<th>Proprietário</th>
+						<th>Equipamento</th>
+                        <th>Entrada</th>
                         <th>Defeito</th>
-                        <th>Previsão de Entrega</th>
+                        <th>Previsão</th>
                         <th>Status</th>
-                        <th>Observações</th>
-                        <th>Operações Sistema</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
 
                 <!-- dados da tabela - corpo da tabela -->
                 <tbody>
                     <tr>
+						<td>1</td>
                         <td>Jimmy Page</td>
-                        <td>01/07/2023</td>
+                        <td>Equipamento 1</td>
+						<td>01/07/2023</td>
                         <td>Fio com mal contato</td>
                         <td>10/07/2023</td>
-                        <td>Em concerto</td>
-                        <td>Orçamento aprovado</td>
-                        <td><a href="">Alterar Dados</a> | <a href="">Finalizar OS</a></td>
+                        <td>Em conserto</td>
+                        <td><a href=""><i class="bi bi-pencil-fill"></i></a> | <a href=""><i class="bi bi-check2-circle"></i></a></td>
                     </tr>
 
                     <tr>
+						<td>2</td>
                         <td>Robert Plant</td>
-                        <td>07/07/2023</td>
+                        <td>Equipamento 2</td>
+						<td>07/07/2023</td>
                         <td>Motor queimado</td>
                         <td>20/07/2023</td>
                         <td>Aguardando orçamento</td>
-                        <td>Cliente não atende</td>
-                        <td><a href="">Alterar Dados</a> | <a href="">Finalizar OS</a></td>
+                        <td><a href=""><i class="bi bi-pencil-fill"></i></a> | <a href=""><i class="bi bi-check2-circle"></i></a></td>
                     </tr>
 
                     <tr>
+						<td>3</td>
                         <td>John Bonham</td>
-                        <td>10/07/2023</td>
+                        <td>Equipamento 3</td>
+						<td>07/07/2023</td>
                         <td>Não liga</td>
                         <td></td>
-                        <td>Aguardando orçamento</td>
-                        <td></td>
-                        <td><a href="">Alterar Dados</a> | <a href="">Finalizar OS</a></td>
+                        <td>Em conserto</td>
+                        <td><a href="#"><i class="bi bi-pencil-fill"></i></a> | <a href="#"><i class="bi bi-check2-circle"></i></a></td>
                     </tr>
                 </tbody>
             </table>
+			
+			<nav aria-label="Navegação de página exemplo">
+			  <ul class="pagination">
+				<li class="page-item">
+				  <a class="page-link" href="#" aria-label="Anterior">
+					<span aria-hidden="true">&laquo;</span>
+					<span class="sr-only">Anterior</span>
+				  </a>
+				</li>
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item">
+				  <a class="page-link" href="#" aria-label="Próximo">
+					<span aria-hidden="true">&raquo;</span>
+					<span class="sr-only">Próximo</span>
+				  </a>
+				</li>
+			  </ul>
+			</nav>
+			
         </section>
     </main>
 
